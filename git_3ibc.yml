@@ -30,3 +30,4 @@ jobs:
       # Exécute le package pour afficher une blague
       - name: Run Dad Joke
         run: dad-joke
+        run: echo "test"
