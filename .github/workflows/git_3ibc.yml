@@ -19,5 +19,17 @@ jobs:
       - name: Install dad-jokes package globally
         run: npm install --global @mikemcbride/dad-jokes
 
-      - name: Display a dad joke
-        run: dad-jokes
+      - name: Display a dad joke and save to a file
+        run: |
+          JOKE=$(dad-jokes)  # Exécute dad-jokes et récupère la blague dans une variable
+          echo "$JOKE" > dad-joke.txt  # Sauvegarde la blague dans un fichier texte
+
+      - name: Create a new branch and commit the joke
+        run: |
+          git checkout -b dad-jokes-branch  # Crée une nouvelle branche
+          git add dad-joke.txt  # Ajoute le fichier contenant la blague
+          git commit -m "Add a dad joke"  # Commit du fichier
+          git push origin dad-jokes-branch  # Pousse les changements sur la branche nouvellement créée
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Utilisation du token pour l'authentification
