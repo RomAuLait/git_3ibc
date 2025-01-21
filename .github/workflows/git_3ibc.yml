@@ -26,6 +26,8 @@ jobs:
 
       - name: Create a new branch and commit the joke
         run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -b dad-jokes-branch  # Crée une nouvelle branche
           git add dad-joke.txt  # Ajoute le fichier contenant la blague
           git commit -m "Add a dad joke"  # Commit du fichier
