@@ -1,7 +1,6 @@
 name: Install and Run Dad Jokes
 
 on: [push]
-    
 
 jobs:
   setup-environment:
@@ -25,4 +24,7 @@ jobs:
       # Exécute le package pour afficher une blague
       - name: Run Dad Joke
         run: dad-joke
+
+      # Affiche un message de test
+      - name: Echo test message
         run: echo "test"
