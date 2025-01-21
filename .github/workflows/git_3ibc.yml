@@ -1,12 +1,7 @@
 name: Install and Run Dad Jokes
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+on: [push]
+    
 
 jobs:
   setup-environment:
